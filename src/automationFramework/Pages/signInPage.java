@@ -39,6 +39,7 @@ public class signInPage extends pageBase {
 	
 	public myAccountPage signIn(String username, String pwd)
 	{
+		 PageFactory.initElements(driver, this);
 		 wait.until(ExpectedConditions.visibilityOfElementLocated(email)).sendKeys(username);
 		 passwd.sendKeys(pwd);
 		 SubmitLogin.click();
@@ -48,6 +49,7 @@ public class signInPage extends pageBase {
 	
 	public createNewUserPage gotoCreateNewUser(String email)
 	{
+		 PageFactory.initElements(driver, this);
 		 wait.until(ExpectedConditions.visibilityOfElementLocated(email_create)).sendKeys(email);
 		 SubmitCreate.click();
 		 
