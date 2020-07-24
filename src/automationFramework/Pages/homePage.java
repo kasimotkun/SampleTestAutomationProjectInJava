@@ -13,6 +13,8 @@ public class homePage extends pageBase {
   private WebDriver driver;
   private WebDriverWait wait;
   
+  private By login =By.className("login");
+  
    public homePage(WebDriver driver, WebDriverWait wait) {
 	   
 	   this.driver=driver;
@@ -21,7 +23,7 @@ public class homePage extends pageBase {
 
    public signInPage gotoSignInPage()
    {
-	   wait.until(ExpectedConditions.elementToBeClickable(By.className("login"))).click();
+	   wait.until(ExpectedConditions.elementToBeClickable(login)).click();
 	   
 	   return new signInPage(this.driver,this.wait);
    }
