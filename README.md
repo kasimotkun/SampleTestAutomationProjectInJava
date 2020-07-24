@@ -28,5 +28,5 @@ checkout test.
 
 #How To Run
 
-Please install at least Java 1.8 and open command prompt inside the project folder, and then prompt 
+Please install at least Jdk 14 and open command prompt inside the project folder, and then prompt 
 "java -Dtestng.dtd.http=true -cp "".\bin;.\selenium-3.141.59\*;.\selenium-3.141.59\*;.\selenium-3.141.59\libs\*;.\testng_7.2.0\*"" org.testng.TestNG testng.xml"   in the comment line.
