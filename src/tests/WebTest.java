@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -52,9 +53,14 @@ public class WebTest extends DataProviderFromTextFile {
 		 String surname = "Lastname";
 		 
 		 homePage hmPage = new homePage(driver,wait);
+		 
+		 PageFactory.initElements(driver, hmPage);
 		 signInPage signInPage = hmPage.gotoSignInPage();
+		 
+		 PageFactory.initElements(driver, signInPage);
 	     createNewUserPage crtUsrPage = signInPage.gotoCreateNewUser(email);
 	     
+	     PageFactory.initElements(driver, crtUsrPage);
 	     crtUsrPage.createNewUser(name, surname);
 		
 
@@ -85,7 +91,11 @@ public class WebTest extends DataProviderFromTextFile {
 		
 		 String fullName = "Ankit Nigam";
 		 homePage hmPage = new homePage(driver,wait);
+		 
+		 PageFactory.initElements(driver, hmPage);
 		 signInPage signInPage = hmPage.gotoSignInPage();
+		 
+		 PageFactory.initElements(driver, signInPage);
 		 signInPage.signIn(existingUserEmail, existingUserPassword);
 		 
 		 WebElement heading =
@@ -119,9 +129,14 @@ public class WebTest extends DataProviderFromTextFile {
 
 		 
 		 homePage hmPage = new homePage(driver,wait);
+		 
+		 PageFactory.initElements(driver, hmPage);
 		 signInPage signInPage = hmPage.gotoSignInPage();
+		 
+		 PageFactory.initElements(driver, signInPage);
 		 myAccountPage myAccountPage = signInPage.signIn(existingUserEmail, existingUserPassword);
 		
+		 PageFactory.initElements(driver, myAccountPage);
 		 myAccountPage.checout(hashMapValue);
 		 
 		
