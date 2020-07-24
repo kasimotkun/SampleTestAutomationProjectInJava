@@ -18,9 +18,6 @@ public class myAccountPage extends pageBase {
   private WebDriver driver;
   private WebDriverWait wait;
   
-  @FindBy(how = How.XPATH, using = "//a[@title='\"+hashMapValue.get(\"productName\")+\"']")
-  private WebElement productName;
-  
   @FindBy(how = How.NAME, using = "processCarrier")
   private WebElement processCarrier;
   
@@ -40,10 +37,10 @@ public class myAccountPage extends pageBase {
 
    public void checout( HashMap<String,String> hashMapValue)
    {
-	   	 PageFactory.initElements(driver, this);
+	   	 
 	   	 
 		 wait.until(ExpectedConditions.visibilityOfElementLocated(By.linkText(hashMapValue.get("category")))).click();
-		 productName.click();
+		 driver.findElement(By.xpath( "//a[@title='"+hashMapValue.get("productName")+"']")).click();
 		 
 		 wait.until(ExpectedConditions.visibilityOfElementLocated(Submit)).click();
 		 wait.until(ExpectedConditions.visibilityOfElementLocated(Proceedtocheckout1)).click();
