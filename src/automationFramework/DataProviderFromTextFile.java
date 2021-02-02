@@ -36,11 +36,11 @@ public class DataProviderFromTextFile extends testBase {
 				
 			  
 			  List<HashMap<String, String>> arrayMapList = new ArrayList<HashMap<String, String>>();
-			    HashMap<String, String> hashMapItems = new HashMap<String, String>();
+			    HashMap<String, String> hashMapItems;
 			 
 			for (int i=0; i<Lines.length; i++)
 			{
-				
+				 hashMapItems = new HashMap<String, String>();
 			
 				if (i == 0)
 				{
